@@ -1,4 +1,4 @@
-package org.example.semaphore;
+package org.example.semaphore.ex1;
 
 public class OddPrinter implements Runnable{
 

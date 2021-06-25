@@ -1,4 +1,4 @@
-package org.example.evenodd.semaphore;
+package org.example.semaphore.ex2;
 
 public class MainClass {
     public static void main(String[] args) {

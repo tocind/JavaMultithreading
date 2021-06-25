@@ -1,4 +1,4 @@
-package org.example.evenodd.semaphore2;
+package org.example.semaphore.ex3;
 
 import java.util.ArrayList;
 import java.util.List;

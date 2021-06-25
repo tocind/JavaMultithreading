@@ -1,4 +1,4 @@
-package org.example.evenodd.semaphore;
+package org.example.semaphore.ex2;
 
 public class SecondRunnable implements Runnable {
 

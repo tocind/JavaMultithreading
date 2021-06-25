@@ -1,4 +1,4 @@
-package org.example.evenodd.semaphore2;
+package org.example.semaphore.ex3;
 
 import java.util.List;
 import java.util.concurrent.Semaphore;
