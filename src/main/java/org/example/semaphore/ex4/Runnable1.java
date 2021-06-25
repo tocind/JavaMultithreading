@@ -1,4 +1,4 @@
-package org.example.semaphore.ex3;
+package org.example.semaphore.ex4;
 
 public class Runnable1 implements Runnable{
 

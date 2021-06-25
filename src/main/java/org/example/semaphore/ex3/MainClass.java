@@ -10,8 +10,8 @@ public class MainClass {
         List<Integer> integers = getIngegerList();
 
         SharedResource sharedResource = new SharedResource(integers);
-        Thread t1 = new Thread(new Runnable1(sharedResource));
-        Thread t2 = new Thread(new Runnable2(sharedResource));
+        Thread t1 = new Thread(new FooRunnable(sharedResource));
+        Thread t2 = new Thread(new SeekRunnable(sharedResource));
 
         t1.start();
         t2.start();
