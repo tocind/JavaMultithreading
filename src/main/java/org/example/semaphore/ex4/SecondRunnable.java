@@ -1,10 +1,10 @@
 package org.example.semaphore.ex4;
 
-public class Runnable2 implements Runnable{
+public class SecondRunnable implements Runnable{
 
-    SharedResource resource;
+    private SharedResource resource;
 
-    Runnable2(SharedResource resource){
+    SecondRunnable(SharedResource resource){
         this.resource = resource;
     }
 
