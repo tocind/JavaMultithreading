@@ -26,12 +26,13 @@ public class SharedResource {
 
                 s1.acquire();
                 if (fooCount % 2 != 0) {
-                    System.out.println(Thread.currentThread().getName() + "-> " + var.getKey() + " " + var.getValue() + " count " + fooCount);
+                    System.out.println(Thread.currentThread().getName()+"::: KEY -> " + var.getKey() + " VALUE-> " + var.getValue());
                 }
                 fooCount++;
                 Thread.sleep(300);
 
             } catch (InterruptedException iex) {
+                iex.printStackTrace();
             } finally {
                 s2.release();
             }
@@ -47,12 +48,13 @@ public class SharedResource {
 
                 s2.acquire();
                 if (seekCount % 2 == 0) {
-                    System.out.println(Thread.currentThread().getName() + "-> " + var.getKey() + " " + var.getValue() + " count " + seekCount);
+                    System.out.println(Thread.currentThread().getName()+"::: KEY -> " + var.getKey() + " VALUE-> " + var.getValue());
                 }
                 seekCount++;
                 Thread.sleep(300);
 
-            } catch (InterruptedException ix) {
+            } catch (InterruptedException iex) {
+                iex.printStackTrace();
             } finally {
                 s1.release();
             }
