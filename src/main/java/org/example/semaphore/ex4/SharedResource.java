@@ -6,13 +6,16 @@ import java.util.concurrent.Semaphore;
 public class SharedResource {
 
     private Map<Integer, Integer> integerMap;
-    private static int count = 1;
+    private int fooCount;
+    private int seekCount;
 
     private Semaphore s1 = new Semaphore(1);
     private Semaphore s2 = new Semaphore(0);
 
-    SharedResource(Map<Integer, Integer> integerMap) {
+    SharedResource(Map<Integer, Integer> integerMap, int fooCount, int seekCount) {
         this.integerMap = integerMap;
+        this.fooCount = fooCount;
+        this.seekCount = seekCount;
     }
 
     public void foo() {
@@ -22,10 +25,10 @@ public class SharedResource {
             try {
 
                 s1.acquire();
-                if (count % 2 != 0) {
-                    System.out.println(Thread.currentThread().getName() + "-> " + var.getKey() + " " + var.getValue() + " count " + count);
+                if (fooCount % 2 != 0) {
+                    System.out.println(Thread.currentThread().getName() + "-> " + var.getKey() + " " + var.getValue() + " count " + fooCount);
                 }
-                count++;
+                fooCount++;
                 Thread.sleep(300);
 
             } catch (InterruptedException iex) {
@@ -43,10 +46,10 @@ public class SharedResource {
             try {
 
                 s2.acquire();
-                if (count % 2 == 0) {
-                    System.out.println(Thread.currentThread().getName() + "-> " + var.getKey() + " " + var.getValue() + " count " + count);
+                if (seekCount % 2 == 0) {
+                    System.out.println(Thread.currentThread().getName() + "-> " + var.getKey() + " " + var.getValue() + " count " + seekCount);
                 }
-                count++;
+                seekCount++;
                 Thread.sleep(300);
 
             } catch (InterruptedException ix) {
