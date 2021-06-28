@@ -7,7 +7,7 @@ public class MainClass {
 
     public static void main(String[] args) {
 
-        List<Integer> integers = getIngegerList();
+        List<Integer> integers = getIntegerList();
 
         SharedResource sharedResource = new SharedResource(integers);
         Thread t1 = new Thread(new FooRunnable(sharedResource));
@@ -18,7 +18,7 @@ public class MainClass {
 
     }
 
-    private static List<Integer> getIngegerList() {
+    private static List<Integer> getIntegerList() {
         List<Integer> integers = new ArrayList<>();
         for ( int i = 1; i < 100; ++i) {
             integers.add(i*2);
